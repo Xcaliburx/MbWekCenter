@@ -2,22 +2,14 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+   @foreach ($products as $product)
+     <img class="d-block" src="{{ Storage::url($product->image) }}" height="200" width="200" alt="" />
+     <p>{{ $product->title }}</p>
+     <p>{{ $product->description }}</p>
+   @endforeach
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+   <div class="d-felx justify-content-center">
+        {{ $products->links() }}
     </div>
 </div>
 @endsection

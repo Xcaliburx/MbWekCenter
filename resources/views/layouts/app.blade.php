@@ -40,7 +40,7 @@
                     <ul class="navbar-nav ms-auto">
                         <!-- Authentication Links -->
                         <li class="nav-item">
-                            <a class="nav-link text-light" href="">{{ __('Home') }}</a>
+                            <a class="nav-link text-light" href="/home">{{ __('Home') }}</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-light" href="">{{ __('Search Product') }}</a>
@@ -69,7 +69,7 @@
                                         <a class="dropdown-item" href="">{{ __('Transaction') }}</a>
                                         <a class="dropdown-item" href="">{{ __('Cart') }}</a>
                                     @else
-                                        <a class="dropdown-item" href="">{{ __('Insert Product') }}</a>
+                                        <a class="dropdown-item" href="/admin/product/insert">{{ __('Insert Product') }}</a>
                                         <a class="dropdown-item" href="">{{ __('Manage User') }}</a>
                                     @endif
                                     

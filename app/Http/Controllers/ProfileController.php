@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Auth;
 use App\Models\User;
+use Auth;
 use Hash;
 
 class ProfileController extends Controller

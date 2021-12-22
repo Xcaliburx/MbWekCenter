@@ -19,10 +19,17 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\ProductController::class, 'home'])->name('home');
 
 Route::group(['prefix' => '/user', 'middleware' => ['validateUser', 'auth']], function (){
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
     Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update']);
+});
+
+Route::group(['prefix' => '/admin', 'middleware' => ['validateAdmin', 'auth']], function (){
+    Route::prefix('/product')->group(function(){
+        Route::get('/insert', [App\Http\Controllers\ProductController::class, 'index']);
+        Route::post('/insert', [App\Http\Controllers\ProductController::class, 'insert']);
+    });
 });
 
