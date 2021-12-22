@@ -70,7 +70,7 @@
                                         <a class="dropdown-item" href="">{{ __('Cart') }}</a>
                                     @else
                                         <a class="dropdown-item" href="/admin/product/insert">{{ __('Insert Product') }}</a>
-                                        <a class="dropdown-item" href="">{{ __('Manage User') }}</a>
+                                        <a class="dropdown-item" href="/admin/users">{{ __('Manage User') }}</a>
                                     @endif
                                     
                                     <a class="dropdown-item" href="{{ route('logout') }}"
@@ -94,7 +94,7 @@
             @yield('content')
         </main>
 
-        <footer class="text-center bg-info text-white py-2 fst-italic position-absolute bottom-0 w-100">
+        <footer class="text-center bg-info text-white py-2 fst-italic fixed-bottom">
             <h5>&copy;Copyright MbWekCenter 2021</h5>
         </footer>
     </div>

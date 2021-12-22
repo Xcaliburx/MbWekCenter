@@ -34,4 +34,10 @@ class ProfileController extends Controller
 
         return redirect('/user/profile')->with('success',' Update Success!');
     }
+
+    public function view(){
+        $users = User::where('role', '1')->get();
+
+        return view('user', ['users' => $users]);
+    }
 }

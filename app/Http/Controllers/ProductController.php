@@ -44,4 +44,10 @@ class ProductController extends Controller
 
         return view('home', ['products' => $products]);
     }
+
+    public function detail($id){
+        $product = Product::where('id', $id)->first();
+
+        return view('product.detail', ['product' => $product]);
+    }
 }
