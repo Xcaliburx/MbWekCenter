@@ -27,6 +27,10 @@ Route::post('/search/product', [App\Http\Controllers\ProductController::class, '
 Route::group(['prefix' => '/user', 'middleware' => ['validateUser', 'auth']], function (){
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
     Route::put('/profile/update', [App\Http\Controllers\ProfileController::class, 'update']);
+
+    Route::post('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'add']);
+    Route::get('/cart', [App\Http\Controllers\CartController::class, 'view']);
+    Route::delete('/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
 });
 
 Route::group(['prefix' => '/admin', 'middleware' => ['validateAdmin', 'auth']], function (){

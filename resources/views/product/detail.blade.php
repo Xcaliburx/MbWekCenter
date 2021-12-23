@@ -18,7 +18,7 @@
             @auth
                 @if(Auth::user()->role == 1)
                     <h3 class="mt-5">Add To Cart</h3>
-                    <form class="ms-4" method="POST" action="">
+                    <form class="ms-4" method="POST" action="{{ url('/user/cart/add', $product->id) }}">
                         @csrf
 
                         <div class="row mb-3">
