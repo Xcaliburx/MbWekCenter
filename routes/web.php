@@ -21,6 +21,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\ProductController::class, 'home'])->name('home');
 Route::get('/product/{id}', [App\Http\Controllers\ProductController::class, 'detail']);
+Route::get('/search/product', [App\Http\Controllers\ProductController::class, 'search']);
+Route::post('/search/product', [App\Http\Controllers\ProductController::class, 'search']);
 
 Route::group(['prefix' => '/user', 'middleware' => ['validateUser', 'auth']], function (){
     Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'index']);
@@ -31,6 +33,8 @@ Route::group(['prefix' => '/admin', 'middleware' => ['validateAdmin', 'auth']], 
     Route::prefix('/product')->group(function(){
         Route::get('/insert', [App\Http\Controllers\ProductController::class, 'index']);
         Route::post('/insert', [App\Http\Controllers\ProductController::class, 'insert']);
+        Route::get('/edit/{id}', [App\Http\Controllers\ProductController::class, 'edit']);
+        Route::put('/update/{id}', [App\Http\Controllers\ProductController::class, 'update']);
     });
 
     Route::get('/users', [App\Http\Controllers\ProfileController::class, 'view']);
