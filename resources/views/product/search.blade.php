@@ -22,6 +22,10 @@
     </form>
 
     <div class="row gx-5 gy-4">
+        @if(count($products) == 0)
+            <h1>There is no products</h1>
+        @endif
+        
         @foreach ($products as $product)
             <div class="col-4">
                 <img class="d-block rounded-2" src="{{ Storage::url($product->image) }}" height="400" width="400" alt="" />

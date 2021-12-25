@@ -40,4 +40,10 @@ class ProfileController extends Controller
 
         return view('user', ['users' => $users]);
     }
+
+    public function delete($id){
+        User::where('id', $id)->delete();
+
+        return back();
+    }   
 }

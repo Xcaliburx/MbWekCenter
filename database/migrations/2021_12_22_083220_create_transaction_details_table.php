@@ -16,7 +16,7 @@ class CreateTransactionDetailsTable extends Migration
         Schema::create('transaction_details', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('transactionHeaderId');
-            $table->foreign('transactionHeaderId')->references('id')->on('transaction_headers');
+            $table->foreign('transactionHeaderId')->references('id')->on('transaction_headers')->onDelete('cascade');;
             $table->unsignedInteger('productId');
             $table->foreign('productId')->references('id')->on('products');
             $table->integer('quantity');

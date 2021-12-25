@@ -17,8 +17,7 @@ class TransactionController extends Controller
 
         $header = TransactionHeader::create([
             'userId' => $userId,
-            'dateOrder' => Carbon::now(),
-            'grandTotal' => '10000'
+            'dateOrder' => Carbon::now()
         ]);
 
         $carts = Cart::where('userId', $userId)->get();

@@ -10,6 +10,6 @@ class TransactionHeader extends Model
     use HasFactory;
 
     protected $fillable = [
-        'id', 'userId', 'dateOrder', 'grandTotal'
+        'id', 'userId', 'dateOrder'
     ];
 }

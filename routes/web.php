@@ -44,5 +44,6 @@ Route::group(['prefix' => '/admin', 'middleware' => ['validateAdmin', 'auth']], 
     });
 
     Route::get('/users', [App\Http\Controllers\ProfileController::class, 'view']);
+    Route::delete('/user/{id}', [App\Http\Controllers\ProfileController::class, 'delete']);
 });
 

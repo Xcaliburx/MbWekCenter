@@ -16,9 +16,8 @@ class CreateTransactionHeadersTable extends Migration
         Schema::create('transaction_headers', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('userId');
-            $table->foreign('userId')->references('id')->on('users');
+            $table->foreign('userId')->references('id')->on('users')->onDelete('cascade');;
             $table->datetime('dateOrder');
-            $table->integer('grandTotal');
             $table->timestamps();
         });
     }
