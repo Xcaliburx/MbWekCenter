@@ -49,7 +49,10 @@
 
     <div class="float-end">
         <p>Grand Total : Rp. {{ $total }}</p>
-        <button class="btn btn-primary float-end" type="button">Checkout</button>
+        <form method="POST" action="{{ url('/user/checkout') }}">
+            @csrf
+            <button class="btn btn-primary float-end" onclick="return confirm('Are you sure you want to checkout?')" type="submit">Checkout</button>
+        </form>
     </div>
 </div>
 @endsection

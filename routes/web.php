@@ -31,6 +31,8 @@ Route::group(['prefix' => '/user', 'middleware' => ['validateUser', 'auth']], fu
     Route::post('/cart/add/{id}', [App\Http\Controllers\CartController::class, 'add']);
     Route::get('/cart', [App\Http\Controllers\CartController::class, 'view']);
     Route::delete('/cart/delete/{id}', [App\Http\Controllers\CartController::class, 'delete']);
+
+    Route::post('/checkout', [App\Http\Controllers\TransactionController::class, 'checkout']);
 });
 
 Route::group(['prefix' => '/admin', 'middleware' => ['validateAdmin', 'auth']], function (){
