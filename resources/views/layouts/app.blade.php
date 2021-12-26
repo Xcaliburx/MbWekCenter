@@ -66,7 +66,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     @if(Auth::user()->role == 1)
                                         <a class="dropdown-item" href="/user/profile">{{ __('Update Profile') }}</a>
-                                        <a class="dropdown-item" href="">{{ __('Transaction') }}</a>
+                                        <a class="dropdown-item" href="/user/transaction">{{ __('Transaction') }}</a>
                                         <a class="dropdown-item" href="/user/cart">{{ __('Cart') }}</a>
                                     @else
                                         <a class="dropdown-item" href="/admin/product/insert">{{ __('Insert Product') }}</a>

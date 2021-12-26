@@ -1,18 +1,19 @@
 @extends('layouts.app')
 
 @section('content')
-@if (session('success'))
-    <div class="alert alert-success alert-dismissible fade show" role="alert">
-        <strong>{{ session('success') }}</strong>
+@if (session('failed'))
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>{{ session('failed') }}</strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
 
 <div class="container justify-content-center">
+    <h3>Cart</h3>
     <table class="table table-dark table-borderless border">
         <thead>
           <tr>
-              <th class="text-center" scope="col">No</th>
+              <th scope="col">No</th>
               <th scope="col">Item Name</th>
               <th>Price</th>
               <th>Quantity</th>
@@ -29,7 +30,7 @@
 
             @foreach ($carts as $cart)
                 <tr class="table-light">
-                    <th scope="row" style="width: 10%" class="text-center">{{ $loop->iteration }}</th>
+                    <th scope="row" style="width: 10%">{{ $loop->iteration }}</th>
                     <td>{{ $cart->title }}</td>
                     <td>{{ $cart->price }}</td>
                     <td>{{ $cart->quantity }}</td>
